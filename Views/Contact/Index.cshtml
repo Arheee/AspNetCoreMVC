@@ -1,6 +1,29 @@
 ﻿@{
-	ViewData["Title"] = "Liste des contacts";
+    ViewData["Title"] = "Liste des contacts";
+    var contacts = ViewBag.Contacts as List<TpAspNetCoreMVC.Models.ContactModel>;
 }
-<h1>@ViewData["Title"]</h1>
-   <p>@ViewBag.Message</p>
 
+<h1>@ViewData["Title"]</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in contacts)
+        {
+            <tr>
+                <td>@contact.Nom</td>
+                <td>@contact.Prenom</td>
+                <td>@contact.Email</td>
+                <td>
+                    @*Route ici vers details*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
