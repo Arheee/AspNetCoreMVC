@@ -12,6 +12,8 @@
             <th>Email</th>
             <th>Actions</th>
         </tr>
+        <a asp-action="Ajouter" class="btn btn-success">Ajouter un contact</a>
+
     </thead>
     <tbody>
         @foreach (var contact in contacts)
@@ -21,7 +23,7 @@
                 <td>@contact.Prenom</td>
                 <td>@contact.Email</td>
                 <td>
-                    @*Route ici vers details*@
+                    <a asp-action="Afficher" asp-route-id="@contact.Id" class="btn btn-info">Détails</a>
                 </td>
             </tr>
         }

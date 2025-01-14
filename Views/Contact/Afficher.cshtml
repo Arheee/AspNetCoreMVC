@@ -1,6 +1,14 @@
-﻿@{
+﻿@using TpAspNetCoreMVC.Models
+@{
 	ViewData["Title"] = "Détails du contact";
-
+    var contact = ViewData["Contact"] as ContactModel;
+    
 }
 <h1>@ViewData["Title"]</h1>
-<p>Contact affiché : @ViewData["Contact"]</p>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@contact.Prenom @contact.Nom</h5>
+        <p class="card-text"><strong>Email :</strong> @contact.Email</p>
+        <a asp-action="Index" class="btn btn-primary">Retour à la liste</a>
+    </div>
+</div>

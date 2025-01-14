@@ -1,6 +1,23 @@
-﻿@{
+﻿@model TpAspNetCoreMVC.Models.ContactModel
+
+@{
     ViewData["Title"] = "Ajouter un contact";
 }
 
 <h1>@ViewData["Title"]</h1>
-<p>@ViewBag.Instruction</p>
+
+<form asp-action="Ajouter" method="post" class="form-group">
+    <div class="mb-3">
+        <label asp-for="Nom" class="form-label"></label>
+        <input asp-for="Nom" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prenom" class="form-label"></label>
+        <input asp-for="Prenom" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Ajouter</button>
+</form>

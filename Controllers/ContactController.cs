@@ -20,7 +20,7 @@ namespace TpAspNetCoreMVC.Controllers
         }
 
       
-        public ActionResult AfficherContact(int id)
+        public ActionResult Afficher(int id)
         {
             var contact = Contacts.FirstOrDefault(c => c.Id == id);
             if (contact == null)
