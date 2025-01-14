@@ -3,17 +3,22 @@
     var contacts = ViewBag.Contacts as List<TpAspNetCoreMVC.Models.ContactModel>;
 }
 
-<h1>@ViewData["Title"]</h1>
-<table class="table table-bordered">
-    <thead>
-        <tr>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+    <div>
+        <a asp-action="Ajouter" class="btn btn-success">Ajouter un contact</a>
+        <br />
+    </div>
+    <br />
+
+ <table class="table table-bordered table-striped shadow-sm">
+        <thead class="table-dark">
+            <tr>
             <th>Nom</th>
             <th>Prénom</th>
             <th>Email</th>
             <th>Actions</th>
         </tr>
-        <a asp-action="Ajouter" class="btn btn-success">Ajouter un contact</a>
-
     </thead>
     <tbody>
         @foreach (var contact in contacts)
@@ -28,4 +33,5 @@
             </tr>
         }
     </tbody>
-</table>
+  </table>
+</div>

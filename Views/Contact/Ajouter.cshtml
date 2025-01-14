@@ -3,21 +3,30 @@
 @{
     ViewData["Title"] = "Ajouter un contact";
 }
-
-<h1>@ViewData["Title"]</h1>
-
-<form asp-action="Ajouter" method="post" class="form-group">
-    <div class="mb-3">
-        <label asp-for="Nom" class="form-label"></label>
-        <input asp-for="Nom" class="form-control" />
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Ajouter" method="post" class="border p-4 shadow-sm bg-light rounded">
+                <div class="mb-3">
+                    <label asp-for="Nom" class="form-label fw-bold">Nom</label>
+                    <input asp-for="Nom" class="form-control" placeholder="nom" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Prenom" class="form-label fw-bold">Prénom</label>
+                    <input asp-for="Prenom" class="form-control" placeholder="prénom" />
+                    <span asp-validation-for="Prenom" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label fw-bold">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-block">Ajouter</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label asp-for="Prenom" class="form-label"></label>
-        <input asp-for="Prenom" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-success">Ajouter</button>
-</form>
+</div>
